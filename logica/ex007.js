@@ -7,3 +7,4 @@ function aVeryBigSum(ar) {
 }
 
 console.log(aVeryBigSum([10, 20, 30, 40, 50]));
+z
