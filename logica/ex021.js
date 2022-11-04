@@ -1,17 +1,27 @@
-function divisibleSumPairs(n, k, ar) {
-    let sum = 0;
-    for (let index = 0; index < n; index += 1) {
-        for(let pair = 0; pair < n; pair += 1) {
-            if (index != pair) {
-                if ((ar[index] + ar[pair]) % k === 0) {
-                    sum += 1;
-                }
-            }
-        }        
-    };
-    return sum / 2;
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    let applesCount = 0;
+    let orangesCount = 0;
+
+
+    apples.forEach((apple) => {
+        if((apple + a) >= s && (apple + a) <= t) {
+            applesCount += 1;
+
+        }
+    });
+
+    oranges.forEach ((orange) => {
+        if((orange + b) <= t && (orange + b) >= s){
+            orangesCount += 1;
+        }
+    });
+
+    console.log(applesCount);
+    console.log(orangesCount);
+
 }
 
 
-console.log(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]));
-// 5
+countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]);
+// 1
+// 2

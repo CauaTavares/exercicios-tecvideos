@@ -1,11 +1,23 @@
-let sum = 0;
-    let final = 0;
+function breakingRecords(scores) {
+    let max = scores[0];
+    let min = scores[0];
+    let countMax = 0;
+    let countMin = 0;
 
-    bill.forEach(price => sum += price);
-    sum = sum - bill[k];
-    final = sum / 2;
-    if (final != b) {
-        console.log(b - final);
-    } else {
-        console.log(`Bon Appetit`);
+    for (let index = 0; index < scores.length; index += 1) {
+        if (scores[index] > max) {
+            max = scores[index];
+            countMax += 1;
+        };
+
+        if (scores[index] < min) {
+            min = scores[index];
+            countMin += 1;
+        };
     }
+
+    console.log(countMax, countMin);
+}
+
+breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]);
+// 2 4

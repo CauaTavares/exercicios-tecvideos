@@ -1,23 +1,17 @@
-function breakingRecords(scores) {
-    let max = scores[0];
-    let min = scores[0];
-    let countMax = 0;
-    let countMin = 0;
-
-    for (let index = 0; index < scores.length; index += 1) {
-        if (scores[index] > max) {
-            max = scores[index];
-            countMax += 1;
-        };
-
-        if (scores[index] < min) {
-            min = scores[index];
-            countMin += 1;
-        };
-    }
-
-    console.log(countMax, countMin);
+function divisibleSumPairs(n, k, ar) {
+    let sum = 0;
+    for (let index = 0; index < n; index += 1) {
+        for(let pair = 0; pair < n; pair += 1) {
+            if (index != pair) {
+                if ((ar[index] + ar[pair]) % k === 0) {
+                    sum += 1;
+                }
+            }
+        }        
+    };
+    return sum / 2;
 }
 
-breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]);
-// 2 4
+
+console.log(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2]));
+// 5
